@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>registration</title>
+    <style>
+        .d{
+            margin-top: 200px;
+            margin-left: 300px;
+            border: solid;
+            border-color: black;
+            border-radius: 4px;
+            margin-right: 500px;
+            padding-left: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="bo">
+    <form action="login.html" onsubmit="validateForm()">
+        <div class="d">
+        First Name :
+        <input type="text" id="firstName" placeholder="firstName">
+        <br>
+        Last Name :
+        <input type="text" id="lastName" placeholder="lastName">
+        <br>
+        Email:
+        <input type="email" id="email" placeholder="email">
+        <br>
+        Password:
+        <input type="password" id="password">
+        <br>
+        <input type="submit">
+        </div>
+    </form>
+    <script>
+        function validateForm(){
+            var fname = document.getElementById("firstName"). value;
+            var lname = document.getElementById("lastName").  value;
+            var email = document.getElementById("email").     value;
+            var pass = document.getElementById("password").   value;
+            if(fname === "" || lname === "" || email === "" || pass === ""){
+                alert("Enter valid details.");
+                return;
+            }
+            if(pass.length < 8){
+                alert("Password length should be atleast 8 characters");return;
+            }
+            localStorage.setItem("password", "password");
+        }
+    </script>
+</body>
+</html>
